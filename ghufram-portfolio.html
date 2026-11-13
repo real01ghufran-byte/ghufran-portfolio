@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Muhammad Ghufran — beginner graphic designer, video editor and social media manager. Explore selected creative practice projects and services.">
+  <meta name="theme-color" content="#090b12">
+  <title>Muhammad Ghufran — Creative Portfolio</title>
+  <style>
+    :root{
+      --bg:#090b12;--panel:#111521;--panel2:#151b29;--text:#f4f6fb;
+      --muted:#a4adbf;--line:rgba(255,255,255,.10);--accent:#b7ff5a;
+      --blue:#7c8cff;--radius:22px;--max:1120px
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 15% 8%,rgba(124,140,255,.16),transparent 35%),radial-gradient(ellipse at 85% 35%,rgba(183,255,90,.08),transparent 30%),var(--bg)}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(9,11,18,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:850;letter-spacing:-1px;font-size:1.08rem}
+    .brand span{color:var(--accent)}
+    .links{display:flex;align-items:center;gap:25px;color:var(--muted);font-size:.9rem}
+    .links a:hover,.links a.active{color:var(--text)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border-radius:999px;font-weight:750;font-size:.9rem;transition:.25s ease}
+    .nav-cta,.btn.primary{background:var(--accent);color:#10150a}
+    .nav-cta:hover,.btn.primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(183,255,90,.16)}
+    .menu-btn{display:none;background:transparent;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:8px 11px}
+    .hero{padding:105px 0 85px;min-height:680px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:55px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 15px var(--accent)}
+    h1{font-size:clamp(3.2rem,7.2vw,6.4rem);line-height:.98;letter-spacing:-.075em;margin:22px 0}
+    h1 .stroke{color:transparent;-webkit-text-stroke:1px rgba(244,246,251,.8)}
+    .hero p{color:var(--muted);font-size:1.08rem;max-width:590px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .btn.secondary{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+    .btn.secondary:hover{border-color:var(--accent);transform:translateY(-3px)}
+    .hero-note{display:flex;gap:22px;flex-wrap:wrap;margin-top:36px;color:var(--muted);font-size:.82rem}
+    .hero-note strong{color:var(--text);display:block;font-size:1rem}
+    .visual{position:relative;min-height:430px;display:grid;place-items:center}
+    .orbit{position:absolute;width:min(390px,90%);aspect-ratio:1;border:1px solid rgba(255,255,255,.12);border-radius:50%;animation:spin 28s linear infinite}
+    .orbit:before,.orbit:after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 25px var(--accent)}
+    .orbit:before{top:12%;left:16%}.orbit:after{right:8%;bottom:24%;background:var(--blue);box-shadow:0 0 25px var(--blue)}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .profile-card{position:relative;width:min(330px,82%);padding:28px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.025));box-shadow:0 35px 100px rgba(0,0,0,.4);transform:rotate(-4deg)}
+    .avatar{height:210px;border-radius:20px;background:linear-gradient(135deg,#242e4b,#111522 55%,#29351c);display:grid;place-items:center;font-size:5.5rem;font-weight:900;letter-spacing:-10px;color:var(--accent);overflow:hidden}
+    .profile-card small{color:var(--accent);letter-spacing:1.5px;font-weight:800}
+    .profile-card h3{font-size:1.5rem;margin:10px 0 3px}
+    .profile-card p{font-size:.9rem;margin:0}
+    .float-tag{position:absolute;padding:11px 15px;background:#171d2b;border:1px solid var(--line);border-radius:14px;box-shadow:0 15px 35px #0007;font-size:.82rem;font-weight:750}
+    .tag-one{top:14%;right:0}.tag-two{bottom:12%;left:0}
+    section{padding:82px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
+    .kicker{color:var(--accent);font-size:.75rem;font-weight:850;letter-spacing:2px;text-transform:uppercase}
+    h2{font-size:clamp(2.2rem,4vw,3.5rem);line-height:1.05;letter-spacing:-.055em;margin:10px 0 0}
+    .section-head p{max-width:440px;color:var(--muted);margin:0}
+    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:22px}
+    .about-card,.service,.project,.skill-card,.contact-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border-radius:var(--radius)}
+    .about-card{padding:30px}
+    .about-mark{font-size:4rem;color:var(--accent);font-weight:900;line-height:1}
+    .about-card h3{font-size:1.5rem;margin:18px 0 8px}
+    .about-card p,.about-copy p{color:var(--muted)}
+    .about-copy{padding:15px 8px}
+    .about-copy p{font-size:1.05rem;margin-top:0}
+    .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+    .chip{border:1px solid var(--line);padding:8px 12px;border-radius:999px;color:#d9deea;font-size:.8rem}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .service{padding:25px;transition:.25s}
+    .service:hover,.project:hover,.skill-card:hover{transform:translateY(-6px);border-color:rgba(183,255,90,.5)}
+    .icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(183,255,90,.10);color:var(--accent);font-size:1.35rem}
+    .service h3{margin:18px 0 7px;font-size:1.1rem}
+    .service p{color:var(--muted);font-size:.9rem;margin:0}
+    .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .skill-card{padding:20px}
+    .skill-card b{display:block;margin-bottom:5px}
+    .skill-card span{color:var(--muted);font-size:.82rem}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .project{overflow:hidden;transition:.25s}
+    .project-art{height:245px;padding:22px;display:flex;align-items:end;position:relative;overflow:hidden}
+    .project-art:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-45px;top:-90px;background:rgba(255,255,255,.13);filter:blur(2px)}
+    .art-one{background:linear-gradient(135deg,#202b50,#6475b9)}
+    .art-two{background:linear-gradient(135deg,#17271f,#8cae58)}
+    .art-three{background:linear-gradient(135deg,#39203c,#b46a9a)}
+    .art-four{background:linear-gradient(135deg,#282b34,#858c9d)}
+    .mock{position:relative;z-index:1;width:100%;padding:20px;border:1px solid #ffffff55;border-radius:16px;background:#0b0e18b8;backdrop-filter:blur(8px)}
+    .mock-label{font-size:.68rem;letter-spacing:2px;color:var(--accent);font-weight:800}
+    .mock-title{font-size:clamp(1.3rem,3vw,2.1rem);font-weight:900;line-height:1.02;letter-spacing:-1.5px;margin-top:8px}
+    .project-info{padding:22px}
+    .project-info h3{margin:0 0 5px}
+    .project-info p{color:var(--muted);font-size:.9rem;margin:0}
+    .project-type{font-size:.72rem;color:var(--accent);font-weight:800;letter-spacing:1px;text-transform:uppercase}
+    .notice{border-left:3px solid var(--accent);padding:12px 15px;background:rgba(183,255,90,.06);border-radius:0 12px 12px 0;color:var(--muted);font-size:.88rem;margin-top:20px}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+    .contact-card{padding:32px}
+    .contact-card p{color:var(--muted)}
+    .contact-link{display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid var(--line);font-weight:700}
+    .contact-link span:last-child{color:var(--accent)}
+    footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:.82rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.show{opacity:1;transform:translateY(0)}
+    @media(max-width:800px){
+      .links{display:none;position:absolute;top:76px;left:0;right:0;background:#0d111b;padding:18px 22px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}
+      .links.open{display:flex}.menu-btn{display:block}.nav-cta{display:none}
+      .hero{grid-template-columns:1fr;padding:75px 0 55px;gap:10px}.visual{min-height:390px}
+      .about-grid,.contact{grid-template-columns:1fr}.services{grid-template-columns:repeat(2,1fr)}
+      .skills{grid-template-columns:repeat(2,1fr)}section{padding:65px 0}
+      .section-head{align-items:flex-start;flex-direction:column}
+    }
+    @media(max-width:520px){
+      .wrap{width:min(var(--max),calc(100% - 28px))}
+      h1{font-size:3.45rem}.services,.projects{grid-template-columns:1fr}
+      .project-art{height:220px}.profile-card{width:78%}.avatar{height:175px}
+      .hero-note{gap:15px}.contact-card{padding:24px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">MG<span>.</span></a>
+      <nav class="links" id="navLinks">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
+        <a href="#skills">Skills</a><a href="#work">Work</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Let's connect ↗</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="home">
+      <div class="reveal">
+        <div class="eyebrow"><span class="dot"></span> Creative mind · Digital learner</div>
+        <h1>Ideas into<br><span class="stroke">impact.</span></h1>
+        <p>I'm <strong>Muhammad Ghufran</strong> — a growing creative professional exploring graphic design, video editing, social media management and YouTube SEO. I enjoy turning ideas into clear, engaging digital content.</p>
+        <div class="actions">
+          <a class="btn primary" href="#work">Explore my work ↗</a>
+          <a class="btn secondary" href="#contact">Get in touch</a>
+        </div>
+        <div class="hero-note">
+          <div><strong>04</strong>Creative skill areas</div>
+          <div><strong>Always learning</strong>Building through practice</div>
+        </div>
+      </div>
+      <div class="visual reveal" aria-label="Decorative personal brand graphic">
+        <div class="orbit"></div>
+        <div class="profile-card">
+          <div class="avatar">MG</div>
+          <small>CREATIVE PORTFOLIO / 2026</small>
+          <h3>Muhammad Ghufran</h3>
+          <p>Design · Edit · Manage · Optimize</p>
+        </div>
+        <div class="float-tag tag-one">✳ Creative thinking</div>
+        <div class="float-tag tag-two">↗ Digital content</div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker">A little about me</div><h2>Curious by nature.<br>Creative by practice.</h2></div></div>
+        <div class="about-grid">
+          <div class="about-card reveal">
+            <div class="about-mark">MG.</div>
+            <h3>Hi, I'm Ghufran.</h3>
+            <p>I'm developing practical digital skills and building my creative journey one project at a time.</p>
+          </div>
+          <div class="about-copy reveal">
+            <p>I’m interested in how strong visuals, thoughtful editing and useful content can help people communicate online. My current focus is improving my foundations in graphic design, video editing, social media management and YouTube SEO.</p>
+            <p>I believe good work comes from curiosity, consistency and being open to feedback. This portfolio is a place to share my practice projects, track my progress and connect with people who value creative digital work.</p>
+            <div class="chips"><span class="chip">Graphic design</span><span class="chip">Video editing</span><span class="chip">Social media</span><span class="chip">YouTube SEO</span><span class="chip">Learning every day</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker">What I'm learning to do</div><h2>Creative services.</h2></div><p>My current skill level is developing. I focus on clear communication, careful execution and improving with every project.</p></div>
+        <div class="services">
+          <article class="service reveal"><div class="icon">✳</div><h3>Graphic Design</h3><p>Simple, eye-catching social posts, thumbnails and visual layouts.</p></article>
+          <article class="service reveal"><div class="icon">▶</div><h3>Video Editing</h3><p>Basic short-form edits, clean cuts, captions and engaging pacing.</p></article>
+          <article class="service reveal"><div class="icon">◎</div><h3>Social Media Management</h3><p>Content planning, profile organization and consistent posting support.</p></article>
+          <article class="service reveal"><div class="icon">⌕</div><h3>YouTube SEO</h3><p>Researching relevant keywords and improving titles, descriptions and metadata.</p></article>
+          <article class="service reveal"><div class="icon">▧</div><h3>Content Support</h3><p>Helping shape content ideas into practical posts and short videos.</p></article>
+          <article class="service reveal"><div class="icon">↗</div><h3>Creative Research</h3><p>Exploring formats, references and content trends to guide new ideas.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker">My toolkit</div><h2>Skills in progress.</h2></div><p>A transparent snapshot of the areas I'm currently developing and practicing.</p></div>
+        <div class="skills">
+          <div class="skill-card reveal"><b>Graphic Design</b><span>Basic · Developing</span></div>
+          <div class="skill-card reveal"><b>Video Editing</b><span>Basic · Developing</span></div>
+          <div class="skill-card reveal"><b>Social Media</b><span>Foundations · Developing</span></div>
+          <div class="skill-card reveal"><b>YouTube SEO</b><span>Foundations · Developing</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker">Selected concepts</div><h2>Work & experiments.</h2></div><p>These are editable concept previews to show the kind of work I want to create. Replace them with your own real projects before sharing the portfolio professionally.</p></div>
+        <div class="projects">
+          <article class="project reveal"><div class="project-art art-one"><div class="mock"><div class="mock-label">SOCIAL DESIGN / CONCEPT</div><div class="mock-title">MAKE<br>IT MATTER.</div></div></div><div class="project-info"><div class="project-type">Graphic design</div><h3>Social post direction</h3><p>A sample visual direction for a modern social media post.</p></div></article>
+          <article class="project reveal"><div class="project-art art-two"><div class="mock"><div class="mock-label">VIDEO / CONCEPT</div><div class="mock-title">STORIES<br>IN MOTION.</div></div></div><div class="project-info"><div class="project-type">Video editing</div><h3>Short-form video concept</h3><p>A sample direction for a concise, engaging vertical video.</p></div></article>
+          <article class="project reveal"><div class="project-art art-three"><div class="mock"><div class="mock-label">CHANNEL / CONCEPT</div><div class="mock-title">BUILD YOUR<br>COMMUNITY.</div></div></div><div class="project-info"><div class="project-type">Social media</div><h3>Content identity concept</h3><p>A sample content look and feel for a creator profile.</p></div></article>
+          <article class="project reveal"><div class="project-art art-four"><div class="mock"><div class="mock-label">YOUTUBE / CONCEPT</div><div class="mock-title">BE FOUND.<br>BE CLEAR.</div></div></div><div class="project-info"><div class="project-type">YouTube SEO</div><h3>Video metadata concept</h3><p>A sample approach to clearer titles, descriptions and keywords.</p></div></article>
+        </div>
+        <div class="notice">Portfolio honesty note: these are concept placeholders, not claims of paid client work. Add your own finished samples, and label practice work accurately.</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker">Let's connect</div><h2>Have an idea?<br>Let's talk.</h2></div></div>
+        <div class="contact">
+          <div class="contact-card reveal"><h3>Open to learning and creative conversations.</h3><p>If you'd like to discuss a project, share feedback or connect about creative work, you can reach me through a contact channel you choose to make public.</p><p style="font-size:.85rem">Add a dedicated professional email below before publishing.</p><a class="btn primary" href="mailto:YOUR-EMAIL@example.com?subject=Portfolio%20enquiry">Email me ↗</a></div>
+          <div class="contact-card reveal">
+            <a class="contact-link" href="#contact">Email <span>Add your email ↗</span></a>
+            <a class="contact-link" href="#contact">Instagram <span>Add your profile ↗</span></a>
+            <a class="contact-link" href="#contact">LinkedIn <span>Add your profile ↗</span></a>
+            <p style="font-size:.82rem;margin-top:20px">Replace these placeholders with public professional accounts you are comfortable sharing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><span>© <span id="year"></span> Muhammad Ghufran. Built with curiosity.</span><a href="#home">Back to top ↑</a></div></footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const opened = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(opened));
+      menuBtn.textContent = opened ? '✕' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
